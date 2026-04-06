@@ -1,3 +1,6 @@
-document.getElementById('open_btn').addEventListener('click', function () {
-    document.getElementById('sidebar').classList.toggle('open-sidebar');
+const btn = document.getElementById("open_btn");
+const sidebar = document.getElementById("sidebar");
+
+btn.addEventListener("click", () => {
+    sidebar.classList.toggle("open-sidebar");
 });

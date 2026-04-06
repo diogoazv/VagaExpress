@@ -1,0 +1,83 @@
+main {
+    display: flex;
+    justify-content: center;
+}
+
+
+.secao-geral {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    padding: 40px 0;
+}
+
+
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 80px;
+}
+
+
+.hero-texto-button {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.titulo-paragrafo h1 {
+    font-size: 48px;
+    color: #1f2937;
+}
+
+.titulo-paragrafo p {
+    font-size: 16px;
+    color: #6b7280;
+    max-width: 450px;
+}
+
+
+.buttons-container {
+    display: flex;
+    gap: 15px;
+}
+
+
+.button-buscar-vagas {
+    background: transparent;
+    border: 2px solid #2563EB;
+    color: #2563EB;
+    padding: 10px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.button-buscar-vagas:hover {
+    background: #2563EB;
+    color: white;
+}
+
+
+.button-adicionar-vagas {
+    background: #2563EB;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.button-adicionar-vagas:hover {
+    background: #1e40af;
+}
+
+
+.imagem-inicio img {
+    width: 400px;
+    max-width: 100%;
+}
+
