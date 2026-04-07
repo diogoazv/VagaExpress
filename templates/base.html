@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/static/css/side-bar.css">
     <link rel="stylesheet" href="/static/css/hero-section.css">
     <link rel="stylesheet" href="/static/css/card-vaga-inicio.css">
+    <link rel="stylesheet" href="/static/css/pesquisa.css">
 
     <title>VagaExpress</title>
 </head>
@@ -22,7 +23,7 @@
         <div id="sidebar_content">
 
             <div id="user">
-                <img src="/static/img/avatar-1.jpg" id="user_avatar" alt="Avatar">
+                <img src="/static/img/avatares/avatar-1.jpg" id="user_avatar" alt="Avatar">
 
                 <p id="user_infos">
                     <span class="item-description">Usuario 001</span>
@@ -81,11 +82,9 @@
             <section class="hero-section">
                 <div class="hero-texto-button">
                     <div class="titulo-paragrafo">
-                        <h1>Riversul empregabilidade</h1>
+                        <h1>Encontre a vaga ideal para você</h1>
                         <p>
-                            Acesse o site e confira os serviços disponíveis na sua cidade.
-                            Encontre profissionais e soluções perto de você de forma rápida,
-                            prática e segura.
+                            Descubra vagas em diversas áreas, empresas e modelos de trabalho, tudo em um só lugar.
                         </p>
                     </div>
 
@@ -138,65 +137,308 @@
             </section>
 
 
+            <section class="secao-vagas">
 
-            <a href="#" class="card-vaga">
+                <div class="container-pesquisa">
 
-
-                <div class="topo">
-                    <img class="logo" src="/static/img/logos-empregador/empregador-1.jpg" alt="">
-
-                    <div class="info">
-                        <h2 class="titulo">Desenvolvedor </h2>
-                        <h3 class="empresa">Dizestec</h3>
+                    <div class="pesquisa">
+                        <i class="fa-solid fa-magnifying-glass" style="color: rgb(82, 82, 82);"></i>
+                        <input type="text" placeholder="Buscar vagas, empresas ou tecnologias...">
                     </div>
 
-                    <div class="acoes">
-                        <span class="nova">Nova</span>
+                    <div class="filtros">
+
+                        <div class="filtro tipo-modelo">
+                            <i class="fa-solid fa-left-right" style="color: #1f945d;"></i>
+                            <select>
+                                <option>Modelo</option>
+                                <option>Presencial</option>
+                                <option>Remoto</option>
+                                <option>Híbrido</option>
+                            </select>
+                        </div>
+
+
+                        <div class="filtro tipo-contrato">
+                            <i class="fa-solid fa-briefcase" style="color: rgb(99, 51, 51);"></i>
+                            <select>
+                                <option>Tipo</option>
+                                <option>CLT</option>
+                                <option>PJ</option>
+                                <option>Estagiário</option>
+                            </select>
+                        </div>
+
+
+                        <div class="filtro nivel-experiencia">
+                            <i class="fa-solid fa-layer-group" style="color: #4f46e5;"></i>
+                            <select>
+                                <option>Experiência</option>
+                                <option>Estagiário</option>
+                                <option>Atendente</option>
+                                <option>Balconista</option>
+                                <option>Caixa</option>
+                                <option>Outros</option>
+
+
+                            </select>
+                        </div>
+
+                        <div class="filtro localizacao">
+                            <i class="fa-solid fa-location-dot" style="color: rgb(148, 10, 10);"></i>
+                            <select>
+                                <option>Localização</option>
+                                <option>São Paulo</option>
+                                <option>Rio de Janeiro</option>
+                                <option>Belo Horizonte</option>
+                                <option>Curitiba</option>
+                            </select>
+                        </div>
+
                     </div>
+
+                    <button class="botao-pesquisa" type="submit">Pesquisar <i
+                            class="fa-solid fa-arrow-right"></i></button>
+
+
                 </div>
 
 
-                <div class="detalhes">
-                    <span class="badge tipo-contrato">
-                        <i class="fa-solid fa-briefcase"></i> CLT
-                    </span>
-                    <span class="badge modelo-trabalho">
-                        <i class="fa-solid fa-building"></i> Presencial
-                    </span>
-                    <span class="badge nivel-experiencia">
-                        <i class="fa-solid fa-layer-group"></i> Júnior
-                    </span>
-                </div>
+                <section class="card-tela-inicial">
 
 
-                <div class="infos-extra">
-
-                    <div class="info-item local">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <span>São Paulo</span>
-                    </div>
-
-                    <div class="info-item tempo">
-                        <i class="fa-solid fa-clock"></i>
-                        <span>Há 2 dias</span>
-                    </div>
-
-                </div>
+                    <a href="#" class="card-vaga">
 
 
-                <div class="rodape">
-                    <div class="salario">
-                        <span>R$ 3.000,00</span>
-                    </div>
+                        <div class="topo">
+                            <img class="logo" src="/static/img/logos-empregador/empregador-1.jpg" alt="">
 
-                    <span class="ver-mais">
-                        Ver vaga <i class="fa-solid fa-arrow-right"></i>
-                    </span>
-                </div>
+                            <div class="info">
+                                <h2 class="titulo">Aux Administrativo</h2>
+                                <h3 class="empresa">Ativa Serviços Empresariais</h3>
+                            </div>
 
-            </a>
+                            <div class="acoes">
+                                <span class="nova">Recente</span>
+                            </div>
+                        </div>
 
 
+                        <div class="detalhes">
+                            <span class="badge tipo-contrato">
+                                <i class="fa-solid fa-briefcase"></i> CLT
+                            </span>
+                            <span class="badge modelo-trabalho">
+                                <i class="fa-solid fa-building"></i> Remoto
+                            </span>
+                            <span class="badge nivel-experiencia">
+                                <i class="fa-solid fa-layer-group"></i> Estagiário
+                            </span>
+                        </div>
+
+
+                        <div class="infos-extra">
+
+                            <div class="info-item local">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>São Paulo</span>
+                            </div>
+
+                            <div class="info-item tempo">
+                                <i class="fa-solid fa-clock"></i>
+                                <span>Há 2 dias</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="rodape">
+                            <div class="salario">
+                                <span>R$ 1.420,00</span>
+                            </div>
+
+                            <span class="ver-mais">
+                                Ver vaga <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </div>
+
+                    </a>
+
+                    <a href="#" class="card-vaga">
+
+
+                        <div class="topo">
+                            <img class="logo" src="/static/img/logos-empregador/empregador-2.jpg" alt="">
+
+                            <div class="info">
+                                <h2 class="titulo">Vendedor Comercial </h2>
+                                <h3 class="empresa">Mercado Central Brasil</h3>
+                            </div>
+
+                            <div class="acoes">
+                                <span class="nova" style="background: #058fff4b; color: #1d15b6c0;">Ativo</span>
+                            </div>
+                        </div>
+
+
+                        <div class="detalhes">
+                            <span class="badge tipo-contrato">
+                                <i class="fa-solid fa-briefcase"></i> CLT
+                            </span>
+                            <span class="badge modelo-trabalho">
+                                <i class="fa-solid fa-building"></i> Presencial
+                            </span>
+                            <span class="badge nivel-experiencia">
+                                <i class="fa-solid fa-layer-group"></i> Vendedor
+                            </span>
+                        </div>
+
+
+                        <div class="infos-extra">
+
+                            <div class="info-item local">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>Curitiba</span>
+                            </div>
+
+                            <div class="info-item tempo">
+                                <i class="fa-solid fa-clock"></i>
+                                <span>Há 6 dias</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="rodape">
+                            <div class="salario">
+                                <span>R$ 2.300,00</span>
+                            </div>
+
+                            <span class="ver-mais">
+                                Ver vaga <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </div>
+
+                    </a>
+
+
+                    <a href="#" class="card-vaga">
+
+
+                        <div class="topo">
+                            <img class="logo" src="/static/img/logos-empregador/empregador-3.jpg" alt="">
+
+                            <div class="info">
+                                <h2 class="titulo">Desenvolvedor Java </h2>
+                                <h3 class="empresa">TechNova Soluções</h3>
+                            </div>
+
+                            <div class="acoes">
+                                <span class="nova">Recente</span>
+                            </div>
+                        </div>
+
+
+                        <div class="detalhes">
+                            <span class="badge tipo-contrato">
+                                <i class="fa-solid fa-briefcase"></i> PJ
+                            </span>
+                            <span class="badge modelo-trabalho">
+                                <i class="fa-solid fa-building"></i> Remoto
+                            </span>
+                            <span class="badge nivel-experiencia">
+                                <i class="fa-solid fa-layer-group"></i> Pleno
+                            </span>
+                        </div>
+
+
+                        <div class="infos-extra">
+
+                            <div class="info-item local">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>Rio de Janeiro</span>
+                            </div>
+
+                            <div class="info-item tempo">
+                                <i class="fa-solid fa-clock"></i>
+                                <span>Há 1 dias</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="rodape">
+                            <div class="salario">
+                                <span>R$ 3.600,00</span>
+                            </div>
+
+                            <span class="ver-mais">
+                                Ver vaga <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </div>
+
+                    </a>
+
+
+                    <a href="#" class="card-vaga" style="opacity: 0.6; pointer-events: none;">
+
+
+                        <div class="topo">
+                            <img class="logo" src="/static/img/logos-empregador/empregador-4.jpg" alt="">
+
+                            <div class="info">
+                                <h2 class="titulo">Atendente de Loja </h2>
+                                <h3 class="empresa">Grupo Horizonte</h3>
+                            </div>
+
+                            <div class="acoes">
+                                <span class="nova" style="background: #ff0a0a63; color: #cc1508;">Encerrado</span>
+                            </div>
+                        </div>
+
+
+                        <div class="detalhes">
+                            <span class="badge tipo-contrato">
+                                <i class="fa-solid fa-briefcase"></i> CLT
+                            </span>
+                            <span class="badge modelo-trabalho">
+                                <i class="fa-solid fa-building"></i> Presencial
+                            </span>
+                            <span class="badge nivel-experiencia">
+                                <i class="fa-solid fa-layer-group"></i> Atendente
+                            </span>
+                        </div>
+
+
+                        <div class="infos-extra">
+
+                            <div class="info-item local">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span> São Paulo</span>
+                            </div>
+
+                            <div class="info-item tempo">
+                                <i class="fa-solid fa-clock"></i>
+                                <span>Há 3 semana</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="rodape">
+                            <div class="salario">
+                                <span>R$ 1.518,00</span>
+                            </div>
+
+                            <span class="ver-mais">
+                                Ver vaga <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </div>
+
+                    </a>
+                </section>
+
+            </section>
         </section>
 
     </main>
