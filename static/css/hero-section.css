@@ -1,6 +1,7 @@
 main {
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 
 
@@ -33,6 +34,9 @@ main {
 .titulo-paragrafo h1 {
     font-size: 48px;
     color: #1f2937;
+
+    
+
 }
 
 .titulo-paragrafo p {
