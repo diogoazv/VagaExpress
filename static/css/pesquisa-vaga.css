@@ -14,15 +14,17 @@
     max-width: 1150px;
     margin: 20px auto;
 }
-.pesquisa{
+
+.pesquisa {
     display: flex;
     align-items: center;
     gap: 8px;
     background: white;
     border-radius: 10px;
 }
-.pesquisa input{
-   border: 2px solid #014df100;
+
+.pesquisa input {
+    border: 2px solid #014df100;
     outline: none;
     background: #1c55d10c;
     width: 300px;
@@ -30,44 +32,44 @@
     font-size: 12px;
     padding: 10px;
     transition: 0.3s;
-    
 }
-.pesquisa input:hover{
+
+.pesquisa input:hover {
     border: 2px solid #2564eb8a;
-
     border-radius: 10px;
-    
 }
-.pesquisa i{
-    color: #2563EB;
 
+.pesquisa i {
+    color: #2563EB;
 }
-.filtros{
+
+.filtros {
     display: flex;
     gap: 10px;
 }
-.filtro{
+
+.filtro {
     display: flex;
     align-items: center;
     gap: 6px;
     padding: 8px 10px;
-    border-radius: 10px; 
+    border-radius: 10px;
 }
-.filtro i{
+
+.filtro i {
     color: #2563EB;
 }
-.filtro select{
+
+.filtro select {
     border: none;
     outline: none;
     font-size: 13px;
     color: #1f2937;
     font-weight: 400;
     cursor: pointer;
-
 }
 
-
-.botao-pesquisa{
+.botao-pesquisa {
     background: linear-gradient(135deg, #2563EB, #1a49ad);
     color: white;
     border: none;
@@ -75,13 +77,175 @@
     border-radius: 10px;
     cursor: pointer;
     font-weight: 500;
+    font-size: 14px;
     display: flex;
     align-items: center;
     gap: 6px;
     transition: 0.3s;
+    white-space: nowrap;
 }
 
-.botao-pesquisa:hover{
+.botao-pesquisa:hover {
     transform: scale(1.05);
     opacity: 0.9;
+}
+@media (min-width: 1025px) and (max-width: 1500px) {
+        .secao-vagas{
+        padding: 0px;
+    }
+        .container-pesquisa {
+        gap: 10px;
+        width: 1000px;
+        
+    }
+        .pesquisa input {
+        width: 280px;
+        font-size: 13px;
+    }
+        .botao-pesquisa {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+        .filtro {
+        padding: 0px;
+    }
+}
+
+/* RESPONSIVO - TABLET (até 1024px) */
+@media (max-width: 1024px) {
+    .secao-vagas{
+        padding: 0px;
+    }
+    
+    .container-pesquisa {
+        gap: 15px;
+        padding: 25px;
+        flex-wrap: wrap;
+        max-width: 85%;
+    }
+    
+    .pesquisa input {
+        width: 250px;
+        font-size: 12px;
+    }
+    
+    .filtros {
+        gap: 6px;
+    }
+    
+    .filtro {
+        padding: 0px;
+    }
+    
+    .filtro select {
+        font-size: 12px;
+    }
+    
+    .botao-pesquisa {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+}
+
+/* RESPONSIVO - TABLET PEQUENO E CELULAR GRANDE (até 768px) */
+@media (max-width: 768px) {
+    .container-pesquisa {
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px;
+        margin: 15px auto;
+    }
+    
+    .pesquisa {
+        width: 100%;
+        max-width: 500px;
+    }
+    
+    .pesquisa input {
+        width: 100%;
+        font-size: 16px;
+        padding: 14px;
+    }
+    
+    .filtros {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+    }
+    
+    .filtro {
+        flex: 1;
+        min-width: 140px;
+        padding: 10px 12px;
+        justify-content: center;
+    }
+    
+    .filtro select {
+        font-size: 14px;
+        text-align: center;
+    }
+    
+    .botao-pesquisa {
+        width: 100%;
+        max-width: 300px;
+        padding: 14px 20px;
+        font-size: 16px;
+        justify-content: center;
+    }
+}
+
+/* RESPONSIVO - CELULAR (até 480px) */
+@media (max-width: 480px) {
+    .container-pesquisa {
+        padding: 12px;
+        margin: 10px auto;
+        border-radius: 12px;
+        
+    }
+    
+    .pesquisa input {
+        font-size: 16px;
+        padding: 12px;
+    }
+    
+    .filtros {
+        gap: 6px;
+    }
+    
+    .filtro {
+        min-width: 120px;
+        padding: 8px 10px;
+    }
+    
+    .filtro select {
+        font-size: 13px;
+    }
+    
+    .botao-pesquisa {
+        padding: 12px 16px;
+        font-size: 15px;
+    }
+}
+
+/* RESPONSIVO - CELULAR MUITO PEQUENO (até 360px) */
+@media (max-width: 360px) {
+    .container-pesquisa {
+        padding: 10px;
+        margin: 8px auto;
+    }
+    
+    .pesquisa input {
+        padding: 10px;
+        font-size: 15px;
+    }
+    
+    .filtro {
+        min-width: 110px;
+        padding: 6px 8px;
+    }
+    
+    .filtro select {
+        font-size: 12px;
+    }
 }

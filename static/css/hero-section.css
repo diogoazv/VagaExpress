@@ -213,6 +213,7 @@ main {
 @media (min-width: 740px) and (max-width: 1025px) {
     .secao-geral {
     padding: 15px 0;
+    gap: 0px;
 
     
 }
@@ -220,6 +221,7 @@ main {
     .hero-section {
         padding: 25px;
         align-items: center;
+        gap: 0px;
     }
 
 
@@ -260,7 +262,7 @@ main {
 @media (min-width: 1281px) {
 
     .hero-section {
-        gap: 150px; /* seu padrão original */
+        gap: 0px; /* seu padrão original */
     }
 
     .imagem-inicio img {

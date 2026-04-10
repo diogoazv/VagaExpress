@@ -112,7 +112,7 @@
 .nav-mobile ul li:nth-child(5).active ~ .indicador{
     transform: translateX(calc(61px * 4));
 }
-@media (max-width: 700px) {
+@media (max-width: 500px) {
     .nav-mobile {
         display: flex;
     }
