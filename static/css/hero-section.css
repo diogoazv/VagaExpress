@@ -1,26 +1,26 @@
 main {
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    box-sizing: border-box;
+    
 }
 
 
 .secao-geral {
-    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 60px;
-    background: rgba(245, 245, 245, 0.959);
     padding: 100px 0;
+    background: #01a2ca02;
+    
 }
-
-
 .hero-section {
     display: flex;
     justify-content: center;
     align-items: end;
     flex-wrap: wrap;
     gap: 150px;
+    
 }
 
 
@@ -28,19 +28,18 @@ main {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    flex-wrap: wrap;
     
 }
 
 .titulo-paragrafo h1 {
-    font-size: 48px;
+    font-size: clamp(28px, 5vw, 48px);
     color: #1f2937;
-
-    
 
 }
 
 .titulo-paragrafo p {
-    font-size: 16px;
+    font-size: clamp(14px, 2.5vw, 16px);
     color: #6b7280;
     max-width: 450px;
 }
@@ -159,4 +158,112 @@ main {
     background-color: #e5e7eb;
     border: 1px solid #d1d5db;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .secao-geral {
+    padding: 70px 0;
+    
+}
+
+    .hero-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        text-align: start;
+        
+    }
+    .hero-texto-button {
+        padding: 0 20px;
+    }
+
+    .titulo-paragrafo h1 {
+        font-size: 32px;
+        padding-bottom: 15px;
+    }
+
+    .titulo-paragrafo p {
+        font-size: 14px;
+        max-width: 100%;
+    }
+
+    .buttons-container {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .imagem-inicio img {
+        display: none;
+    }
+
+    .textos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sobre-vagaExpress,
+    .como-funciona-vagaExpress {
+        max-width: 100%;
+    }
+}
+
+
+/* TABLET */
+@media (min-width: 740px) and (max-width: 1025px) {
+    .secao-geral {
+    padding: 15px 0;
+
+    
+}
+
+    .hero-section {
+        padding: 25px;
+        align-items: center;
+    }
+
+
+    .imagem-inicio img {
+        display: none;
+    }
+
+    .textos {
+        justify-content: center;
+        flex-wrap: nowrap;
+    }
+
+    .sobre-vagaExpress,
+    .como-funciona-vagaExpress {
+        max-width: 47%;
+    }
+}
+
+
+/* NOTEBOOK/TABLET */
+@media (min-width: 1024px) and (max-width: 1500px) {
+
+    .hero-section {
+        gap: 100px; 
+    }
+
+    .imagem-inicio img {
+        display: none;
+    }
+
+    .textos {
+        justify-content: center;
+    }
+}
+
+
+/* TELA GRANDE */
+@media (min-width: 1281px) {
+
+    .hero-section {
+        gap: 150px; /* seu padrão original */
+    }
+
+    .imagem-inicio img {
+        width: 350px;
+    }
 }

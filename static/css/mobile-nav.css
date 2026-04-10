@@ -1,0 +1,122 @@
+.nav-mobile {
+    width: 360px;
+    max-width: 500px;
+    height: 65px;
+    background-color: #0f172a;
+    position: fixed; 
+    bottom: env(safe-area-inset-bottom);
+    left: 50%;    
+    transform: translateX(-50%); 
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    border-radius: 15px;
+
+
+}
+.nav-mobile ul{
+    display: flex;
+    width: 300px;
+}
+.nav-mobile ul li{
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+
+}
+.nav-mobile ul li a{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+}
+.nav-mobile ul li a .icone{
+    position: relative;
+    display: block;
+    font-size: 1.5em;
+    line-height: 75px;
+    color: #ffffff;
+    text-align: center;
+    transition: 0.5s;
+
+}
+.nav-mobile ul li.active a .icone{
+    transform: translateY(-35px);
+}
+.nav-mobile ul li a .texto{
+    position: absolute;
+    color: #ffffff;
+    font-size: 0.75em;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(20px);
+}
+.nav-mobile ul li.active a .texto{
+    transform: translateY(10px);
+    opacity: 1;
+}
+.indicador{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    left: 24px;
+    background-color: #0f172a;
+    border-radius: 50%;
+    top: -61%;
+    border: 6px solid #ffffff;
+    transition: 0.5s;
+}
+.indicador::before{
+    content: '';
+    position: absolute;
+    top: 56%;
+    left: -318px;
+    width: 315px;
+    height: 20px;
+    background: transparent;
+    border-top-right-radius: 10px;
+    box-shadow: 1px -10px 0 0 #ffffff;
+}
+.indicador::after{
+    content: '';
+    position: absolute;
+    top: 56%;
+    right: -318px;
+    width: 315px;
+    height: 20px;
+    background: transparent;
+    border-top-left-radius: 10px;
+    box-shadow: -1px -10px 0 0 #fefeff;
+}
+.nav-mobile ul li:nth-child(1).active ~ .indicador{
+    transform: translateY(calc(0px * 0));
+}
+.nav-mobile ul li:nth-child(2).active ~ .indicador{
+    transform: translateX(calc(60px * 1));
+}   
+.nav-mobile ul li:nth-child(3).active ~ .indicador{
+    transform: translateX(calc(60px * 2));
+}  
+.nav-mobile ul li:nth-child(4).active ~ .indicador{
+    transform: translateX(calc(60px * 3));
+}
+.nav-mobile ul li:nth-child(5).active ~ .indicador{
+    transform: translateX(calc(61px * 4));
+}
+@media (max-width: 700px) {
+    .nav-mobile {
+        display: flex;
+    }
+}
+
+
+

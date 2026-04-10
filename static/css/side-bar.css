@@ -3,7 +3,6 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -11,7 +10,6 @@
 body {
     display: flex;
     min-height: 100vh;
-    background-color: #e4e4e400;
 }
 
 
@@ -99,7 +97,7 @@ body {
     color: white;
 }
 
-.side-item a i {
+.side-item a ion-icon {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -182,4 +180,17 @@ main {
 #sidebar.open-sidebar ~ main {
     margin-left: 250px;
     width: calc(100% - 250px);
+}
+
+@media (max-width: 740px) {
+
+    #sidebar {
+        display: none; 
+    }
+
+    main {
+        margin-left: 0;
+        width: 100%;
+    }
+
 }

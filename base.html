@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/static/css/card-vaga-inicio.css">
     <link rel="stylesheet" href="/static/css/pesquisa-vaga.css">
     <link rel="stylesheet" href="/static/css/footer.css">
+    <link rel="stylesheet" href="/static/css/mobile-nav.css">
 
     <title>VagaExpress</title>
 </head>
@@ -36,28 +37,28 @@
             <ul id="side_items">
                 <li class="side-item active">
                     <a href="#">
-                        <i class="fa-regular fa-house"></i>
+                        <ion-icon name="home-outline"></ion-icon>
                         <span class="item-description">Inicio</span>
                     </a>
                 </li>
 
                 <li class="side-item">
                     <a href="#">
-                        <i class="fa-solid fa-briefcase"></i>
+                        <ion-icon name="briefcase-outline"></ion-icon>
                         <span class="item-description">Buscar vagas</span>
                     </a>
                 </li>
 
                 <li class="side-item">
                     <a href="#">
-                        <i class="fa-solid fa-circle-plus"></i>
+                        <ion-icon name="add-outline"></ion-icon>
                         <span class="item-description">Publicar Vagas</span>
                     </a>
                 </li>
 
                 <li class="side-item">
                     <a href="#">
-                        <i class="fa-solid fa-gear"></i>
+                        <ion-icon name="settings-outline"></ion-icon>
                         <span class="item-description">Configurações</span>
                     </a>
                 </li>
@@ -76,8 +77,10 @@
         </div>
     </nav>
 
-
     <main>
+
+
+
         <section class="secao-geral">
 
 
@@ -141,69 +144,7 @@
 
             <section class="secao-vagas">
 
-                <div class="container-pesquisa">
 
-                    <div class="pesquisa">
-                        <i class="fa-solid fa-magnifying-glass" style="color: rgb(82, 82, 82);"></i>
-                        <input type="text" placeholder="Buscar vagas, empresas ou tecnologias...">
-                    </div>
-
-                    <div class="filtros">
-
-                        <div class="filtro tipo-modelo">
-                            <i class="fa-solid fa-left-right" style="color: #1f945d;"></i>
-                            <select>
-                                <option>Modelo</option>
-                                <option>Presencial</option>
-                                <option>Remoto</option>
-                                <option>Híbrido</option>
-                            </select>
-                        </div>
-
-
-                        <div class="filtro tipo-contrato">
-                            <i class="fa-solid fa-briefcase" style="color: rgb(99, 51, 51);"></i>
-                            <select>
-                                <option>Tipo</option>
-                                <option>CLT</option>
-                                <option>PJ</option>
-                                <option>Estagiário</option>
-                            </select>
-                        </div>
-
-
-                        <div class="filtro nivel-experiencia">
-                            <i class="fa-solid fa-layer-group" style="color: #4f46e5;"></i>
-                            <select>
-                                <option>Experiência</option>
-                                <option>Estagiário</option>
-                                <option>Atendente</option>
-                                <option>Balconista</option>
-                                <option>Caixa</option>
-                                <option>Outros</option>
-
-
-                            </select>
-                        </div>
-
-                        <div class="filtro localizacao">
-                            <i class="fa-solid fa-location-dot" style="color: rgb(148, 10, 10);"></i>
-                            <select>
-                                <option>Localização</option>
-                                <option>São Paulo</option>
-                                <option>Rio de Janeiro</option>
-                                <option>Belo Horizonte</option>
-                                <option>Curitiba</option>
-                            </select>
-                        </div>
-
-                    </div>
-
-                    <button class="botao-pesquisa" type="submit">Pesquisar <i
-                            class="fa-solid fa-arrow-right"></i></button>
-
-
-                </div>
 
 
                 <section class="card-tela-inicial">
@@ -504,13 +445,56 @@
         </footer>
 
 
+        <div class="nav-mobile">
+            <ul>
+                <li class="itens-mobile ">
+                    <a href="#">
+                        <span class="icone"><ion-icon name="home-outline"></ion-icon></span>
+                        <span class="texto">Inicio</span>
+                    </a>
+                </li>
+                <li class="itens-mobile">
+                    <a href="#">
+                        <span class="icone"><ion-icon name="add-outline"></ion-icon></span>
+                        <span class="texto">Publicar</span>
+                    </a>
+                </li>
+                <li class="itens-mobile active">
+                    <a href="#">
+                        <span class="icone"><ion-icon name="briefcase-outline"></ion-icon></span>
+                        <span class="texto">Vagas</span>
+                    </a>
+                </li>
+                <li class="itens-mobile">
+                    <a href="#">
+                        <span class="icone"><ion-icon name="settings-outline"></ion-icon></span>
+                        <span class="texto">Config</span>
+                    </a>
+                </li>
+                <li class="itens-mobile">
+                    <a href="#">
+                        <span class="icone"><ion-icon name="log-in-outline"></ion-icon></span>
+                        <span class="texto">Sair</span>
+                    </a>
+                </li>
+                <div class="indicador"></div>
+            </ul>
+        </div>
+
 
 
 
     </main>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-    <script src="/static/js/script.js"></script>
+    <script src="/static/js/nav-bar.js"></script>
+    <script src="/static/js/mobile-nav.js"></script>
 
+    <script>
+
+
+    </script>
 </body>
 
 </html>
