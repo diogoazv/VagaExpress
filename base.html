@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 
 
@@ -14,10 +14,25 @@
     <link rel="stylesheet" href="/static/css/card-vaga-inicio.css">
     <link rel="stylesheet" href="/static/css/pesquisa-vaga.css">
     <link rel="stylesheet" href="/static/css/footer.css">
-    <link rel="stylesheet" href="/static/css/mobile-nav.css">
+    <link rel="stylesheet" href="/static/css/mobile/usuario.css">
+    <link rel="stylesheet" href="/static/css/mobile/mobile-nav.css">
+    <link rel="stylesheet" href="/static/css/mobile/filtro-mobile.css">
 
     <title>VagaExpress</title>
 </head>
+<style>
+    @media (max-width: 768px) {
+
+        .container-pesquisa,
+        .hero-section {
+            display: none;
+        }
+
+
+
+
+    }
+</style>
 
 <body>
 
@@ -83,6 +98,108 @@
 
         <section class="secao-geral">
 
+            <section class="mobile-layout">
+                <div class="info-usuario">
+                    <div class="usuario">
+                        <div class="saudacao">Olá,</div>
+                        <div class="name-usuario">Azevedo!</div>
+                    </div>
+
+                    <div class="avatar">
+                        <img src="/static/img/avatares/avatar-1.jpg" alt="">
+                    </div>
+
+                </div>
+
+
+                <div class="barra-busca">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Buscar vagas, empresas ou tecnologias...">
+
+                </div>
+
+
+
+            </section>
+
+            <section class="pesquisa-mobile">
+                <div class="explore-filtros">
+                    <h1>Filtros</h1>
+                    <div class="ver_filtros">
+                        <div class="ver">Mostrar</div>
+                        <i class="fa-solid fa-caret-down"></i>
+                    </div>
+                </div>
+                <div class="filtros-mobile">
+
+                    <div class="filtro-mobile tipo-modelo">
+                        <i class="fa-solid fa-left-right" style="color: #1f945d;"></i>
+                        <select>
+                            <option>Modelo</option>
+                            <option>Presencial</option>
+                            <option>Remoto</option>
+                            <option>Híbrido</option>
+                        </select>
+                    </div>
+
+
+                    <div class="filtro-mobile tipo-contrato">
+                        <i class="fa-solid fa-briefcase" style="color: rgb(99, 51, 51);"></i>
+                        <select>
+                            <option>Tipo</option>
+                            <option>CLT</option>
+                            <option>PJ</option>
+                        </select>
+                    </div>
+
+
+                    <div class="filtro-mobile nivel-experiencia">
+                        <i class="fa-solid fa-layer-group" style="color: #4f46e5;"></i>
+                        <select>
+                            <option>Experiência</option>
+                            <option>Estagiário</option>
+                            <option>Atendente</option>
+                            <option>Balconista</option>
+                            <option>Caixa</option>
+                            <option>Outros</option>
+
+
+                        </select>
+                    </div>
+
+                    <div class="filtro-mobile localizacao">
+                        <i class="fa-solid fa-location-dot" style="color: rgb(148, 10, 10);"></i>
+                        <select>
+                            <option>Localização</option>
+                            <option>São Paulo</option>
+                            <option>Rio de Janeiro</option>
+                            <option>Belo Horizonte</option>
+                            <option>Curitiba</option>
+                        </select>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             <section class="hero-section">
                 <div class="hero-texto-button">
@@ -94,7 +211,7 @@
                     </div>
 
                     <div class="buttons-container">
-                        <button class="button-buscar-vagas">Buscar Vagas</button>
+                        <button class="button-buscar-vagas" id="buscar_vaga">Buscar Vagas</button>
                         <button class="button-adicionar-vagas">Adicionar Vagas</button>
                     </div>
 
@@ -141,10 +258,9 @@
                 </div>
             </section>
 
-
             <section class="secao-vagas">
 
-                 <div class="container-pesquisa">
+                <div class="container-pesquisa">
 
                     <div class="pesquisa">
                         <i class="fa-solid fa-magnifying-glass" style="color: rgb(82, 82, 82);"></i>
@@ -170,7 +286,6 @@
                                 <option>Tipo</option>
                                 <option>CLT</option>
                                 <option>PJ</option>
-                                <option>Estagiário</option>
                             </select>
                         </div>
 
@@ -449,8 +564,6 @@
 
         </section>
 
-
-
         <footer class="footer">
 
 
@@ -508,7 +621,6 @@
 
         </footer>
 
-
         <div class="nav-mobile">
             <ul>
                 <li class="itens-mobile ">
@@ -554,10 +666,13 @@
 
     <script src="/static/js/nav-bar.js"></script>
     <script src="/static/js/mobile-nav.js"></script>
+    <script src="/static/js/ajustes.js"></script>
 
     <script>
-
-
+        // ajuste no novegador para nao ficar dando zoom
+        document.addEventListener('gesturestart', function (e) {
+            e.preventDefault();
+        });
     </script>
 </body>
 

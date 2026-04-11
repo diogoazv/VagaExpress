@@ -1,0 +1,74 @@
+ @media (max-width: 768px)  {
+        .mobile-layout {
+            display: flex;
+            height: 180px;
+            top: 20px auto;
+            flex-direction: column;
+            background: #0f172a;
+            font-family: 'Nunito', sans-serif;
+            border-bottom-left-radius: 25px;
+            border-bottom-right-radius: 25px;
+            padding: 17px;
+            gap: 40px;
+        }
+
+        .info-usuario {
+            display: flex;
+            justify-content: space-between;
+            
+            color: white;
+            align-items: end;
+        }
+        .usuario .saudacao {
+            font-size: 28px;
+            font-weight: 400;
+    
+        }
+
+        .name-usuario {
+            font-size: 28px;
+            font-weight: 700;
+        }
+        .avatar img {
+            max-width: 60px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+            .barra-busca{
+            background: #ffffff;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+             padding: 1px;
+            max-width: 768px;
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+        .barra-busca input{
+        max-width: 750px;
+        width: 280px;
+        font-size: 14px;
+        padding: 16px;
+        border-radius: 50px;
+        border: none;
+        outline: none;
+        transition: 0.3s;
+    }
+    .barra-busca:hover {
+        border-radius: 50px;
+        box-shadow: 0px 0px 5px 0px rgb(0, 48, 119);
+        background: rgb(235, 235, 235);
+    }
+    .barra-busca input:hover{
+        background: rgb(235, 235, 235);
+    }
+
+    .barra-busca i{
+        color: rgba(49, 49, 49, 0.842);
+    }
+}
+ @media (min-width: 769px){
+    .mobile-layout{
+        display: none;
+    }
+ }
