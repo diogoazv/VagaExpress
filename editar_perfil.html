@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Nunito', sans-serif;
+    }
+
+    .container-editar-perfil {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #ffffff00;
+        height: 100vh;
+        position: relative;
+        z-index: 1;
+
+    }
+
+    .boas-vindas {
+        background-image: url('/static/img/background-editar-perfil.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 1100px;
+        height: 800px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        border-radius: 15px;
+    }
+
+
+    .texto {
+        color: #ffffff;
+        text-align: center;
+        background: #211746af;
+        padding: 5px;
+        border: 2px solid #25144417;
+        border-radius: 10px;
+        margin-bottom: 30px;
+
+    }
+
+    .texto h1 {
+        font-size: 36px;
+
+    }
+
+    .texto p {
+        font-size: 15px;
+    }
+
+    .botoes {
+        display: flex;
+        gap: 20px;
+    }
+
+    .btn-sair,
+    .btn-comecar {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-sair {
+        background-color: #e53e3ee8;
+        color: #fff;
+    }
+
+    .btn-sair:hover {
+        background-color: #c5303062;
+    }
+
+    .btn-comecar {
+        background-color: #0f0f27;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        justify-content: center;
+        text-align: center;
+        transition: 300ms ease;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08)
+    }
+
+    .btn-comecar:hover {
+        background-color: #181842ee;
+        border: 1px solid #ffffff91;
+        box-shadow: 0px 0px 10px rgba(33, 14, 248, 0.26);
+        transform: translateX(15px);
+
+    }
+
+    .btn-comecar i {
+        font-size: 13px;
+    }
+
+
+    @media (max-width: 1200px) and (min-width: 1000px) {
+        .boas-vindas {
+            width: 900px;
+            height: 700px;
+            border-radius: 15px;
+        }
+    }
+    @media (max-width: 999px) and (min-width: 769px) {
+        .boas-vindas {
+            width: 700px;
+            height: 600px;
+            border-radius: 15px;
+        }
+    }
+    @media (max-width: 768px) {
+        .boas-vindas {
+            width: 90%;
+            height: 90%;
+            padding: 20px;
+            border-radius: 15px;
+        }
+        .texto{
+            background: none;
+
+        }
+
+        .texto h1 {
+            font-size: 29px;
+        }
+
+        .texto p {
+            font-size: 14px;
+        }
+
+        .botoes {
+            gap: 15px;
+            
+        }
+
+        .btn-comecar {
+            justify-content: center;
+        }
+    }
+
+
+
+
+
+
+    .bg-animado {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #0f0f27;
+        overflow: hidden;
+        z-index: 0;
+    }
+
+    .bg-animado span {
+        position: absolute;
+        display: block;
+        border-radius: 50%;
+        background: rgb(22, 19, 59);
+        animation: flutuar 20s linear infinite;
+        bottom: -150px;
+    }
+
+    .bg-animado span:nth-child(1) {
+        left: 10%;
+        width: 60px;
+        height: 60px;
+        animation-duration: 18s;
+    }
+
+    .bg-animado span:nth-child(2) {
+        left: 30%;
+        width: 100px;
+        height: 100px;
+        animation-duration: 25s;
+    }
+
+    .bg-animado span:nth-child(3) {
+        left: 50%;
+        width: 40px;
+        height: 40px;
+        animation-duration: 15s;
+    }
+
+    .bg-animado span:nth-child(4) {
+        left: 70%;
+        width: 80px;
+        height: 80px;
+        animation-duration: 22s;
+    }
+
+    .bg-animado span:nth-child(5) {
+        left: 90%;
+        width: 50px;
+        height: 50px;
+        animation-duration: 20s;
+    }
+
+    @keyframes flutuar {
+        0% {
+            transform: translateY(0) scale(1);
+            opacity: 0.3;
+        }
+
+        100% {
+            transform: translateY(-1000px) scale(1.2);
+            opacity: 0;
+        }
+    }
+</style>
+
+<body>
+
+    <!-- FUNDO (ADICIONADO) -->
+    <div class="bg-animado">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="container-editar-perfil">
+        <section class="boas-vindas">
+            <div class="texto">
+                <h1>Oportunidades esperando por você</h1>
+                <p>Deixe seu perfil pronto e bora começar</p>
+            </div>
+
+            <div class="botoes">
+                <button class="btn-sair">Sair</button>
+                <button class="btn-comecar">Começar<i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+
+        </section>
+    </div>
+
+</body>
+
+</html>

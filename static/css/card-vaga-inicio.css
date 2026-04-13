@@ -152,10 +152,6 @@
 }
 
 
-
-
-
-
 .card-vaga::after{
     content: "";
     position: absolute;
@@ -172,4 +168,84 @@
 
 .card-vaga:hover::after{
     opacity: 1;
+}
+
+
+
+
+
+@media (max-width: 768px){
+    .card-tela-inicial{
+    margin-top: 0px;
+  
+}
+.card-vaga{
+    width: 335px; 
+    padding: 16px;
+    border-radius: 16px; 
+    gap: 12px; 
+
+}
+
+
+.topo{
+
+    gap: 10px;
+}
+
+.logo{
+    width: 50px; 
+    height: 50px; 
+}
+
+
+.titulo{
+    font-size: 16px;
+}
+
+.empresa{
+    font-size: 12px; 
+
+}
+
+.nova{
+    font-size: 10px; 
+    padding: 2px 7px; 
+
+}
+
+.detalhes{
+    gap: 6px; 
+    padding-bottom: 4px; 
+    padding-top: 8px; 
+}
+
+.badge{
+    font-size: 10px; 
+    padding: 3px 9px; 
+    gap: 4px; 
+}
+
+
+
+.info-item{
+    gap: 5px; 
+    font-size: 11px; 
+
+}
+
+
+
+
+.salario{
+    gap: 5px; 
+    font-size: 15px; 
+
+}
+
+.ver-mais{
+    font-size: 12px; 
+    gap: 4px;
+}
+
 }

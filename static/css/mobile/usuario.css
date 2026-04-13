@@ -57,10 +57,10 @@
     .barra-busca:hover {
         border-radius: 50px;
         box-shadow: 0px 0px 5px 0px rgb(0, 48, 119);
-        background: rgb(235, 235, 235);
+        background: rgb(238, 241, 252);
     }
     .barra-busca input:hover{
-        background: rgb(235, 235, 235);
+        background: rgb(238, 241, 252);
     }
 
     .barra-busca i{
