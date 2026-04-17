@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 
 
-    <link rel="stylesheet" href="/static/css/style.css">
-    <link rel="stylesheet" href="/static/css/side-bar.css">
-    <link rel="stylesheet" href="/static/css/hero-section.css">
-    <link rel="stylesheet" href="/static/css/card-vaga-inicio.css">
-    <link rel="stylesheet" href="/static/css/pesquisa-vaga.css">
-    <link rel="stylesheet" href="/static/css/footer.css">
+    <link rel="stylesheet" href="/static/css/base/side-bar.css">
+    <link rel="stylesheet" href="/static/css/base/hero-section.css">
+    <link rel="stylesheet" href="/static/css/base/pesquisa-vaga.css">
+    <link rel="stylesheet" href="/static/css/base/card-vaga-inicio.css">
+    <link rel="stylesheet" href="/static/css/base/pesquisa-vaga.css">
+    <link rel="stylesheet" href="/static/css/base/footer.css">
     <link rel="stylesheet" href="/static/css/mobile/usuario.css">
     <link rel="stylesheet" href="/static/css/mobile/mobile-nav.css">
     <link rel="stylesheet" href="/static/css/mobile/filtro-mobile.css">
@@ -41,11 +41,11 @@
         <div id="sidebar_content">
 
             <div id="user">
-                <img src="/static/img/avatares/avatar-1.jpg" id="user_avatar" alt="Avatar">
+                <img src="" class="fotoPerfil" alt="Avatar">
 
                 <p id="user_infos">
-                    <span class="item-description">Usuario 001</span>
-                    <span class="item-description">Empregador</span>
+                    <span class="item-description nome-usuario" >Usuário</span>
+                    <span class="item-description tipo-usuario" >Não informado</span>
                 </p>
             </div>
 
@@ -57,21 +57,21 @@
                     </a>
                 </li>
 
-                <li class="side-item">
+                <li class="side-item" id="buscar-vagas">
                     <a href="#">
                         <ion-icon name="briefcase-outline"></ion-icon>
                         <span class="item-description">Buscar vagas</span>
                     </a>
                 </li>
 
-                <li class="side-item">
+                <li class="side-item" id="publicar-vaga">
                     <a href="#">
                         <ion-icon name="add-outline"></ion-icon>
                         <span class="item-description">Publicar Vagas</span>
                     </a>
                 </li>
 
-                <li class="side-item">
+                <li class="side-item" id="configuracoes">
                     <a href="#">
                         <ion-icon name="settings-outline"></ion-icon>
                         <span class="item-description">Configurações</span>
@@ -102,11 +102,11 @@
                 <div class="info-usuario">
                     <div class="usuario">
                         <div class="saudacao">Olá,</div>
-                        <div class="name-usuario">Azevedo!</div>
+                        <div class="nome-usuario"></div>
                     </div>
 
                     <div class="avatar">
-                        <img src="/static/img/avatares/avatar-1.jpg" alt="">
+                        <img src="" class="fotoPerfil" alt="Avatar">
                     </div>
 
                 </div>
@@ -630,8 +630,8 @@
                     </a>
                 </li>
                 <li class="itens-mobile">
-                    <a href="#">
-                        <span class="icone"><ion-icon name="add-outline"></ion-icon></span>
+                    <a href="#" id="publicar-vaga-mobile">
+                        <span class="icone" ><ion-icon name="add-outline"></ion-icon></span>
                         <span class="texto">Publicar</span>
                     </a>
                 </li>
@@ -678,8 +678,43 @@
         });
 
 
+// pega os dados salvos no navegador
+const dadosPerfilSalvos = localStorage.getItem('dadosPerfil');
 
-    </script>
+// verifica se existe algo salvo
+if (dadosPerfilSalvos) {
+    
+    // transforma o texto em objeto
+    const dadosPerfil = JSON.parse(dadosPerfilSalvos); // perse transforma texto em objeto novamente
+    
+    // coloca a selecionada salva no lugar certo da página
+    document.querySelectorAll('.fotoPerfil').forEach(img => {
+        img.src = dadosPerfil.avatar;
+    });
+
+    // `` permite colocar variáveis dentro do texto, usando ${variável}
+    document.querySelectorAll('.nome-usuario').forEach(span => {
+        span.textContent = `${dadosPerfil.nome} ${dadosPerfil.sobrenome}`;
+    });
+    document.querySelectorAll('.tipo-usuario').forEach(span => {
+        span.textContent = `${dadosPerfil.tipo}`;
+    });
+
+
+    if(dadosPerfil.tipo === 'Empregador') {
+        document.querySelector('.tipo-usuario').style.color = '#1f945d';
+
+
+    } else if (dadosPerfil.tipo === 'Candidato') {
+        document.querySelector('.tipo-usuario').style.color = '#4f46e5';
+        document.getElementById('publicar-vaga').style = 'opacity: 0.6; pointer-events: none;';
+        document.getElementById('publicar-vaga-mobile').style = 'opacity: 0.5; pointer-events: none;';
+    } else {
+        document.getElementById('tipo-usuario').style.color = '#000000';
+    }
+}
+
+</script>
 </body>
 
 </html>

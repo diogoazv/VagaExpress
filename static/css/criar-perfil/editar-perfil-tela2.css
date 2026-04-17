@@ -188,11 +188,16 @@
     transform: rotate(45deg) scale(1);
 }
 
+.btn-criar-perfil a {
+    text-decoration: none;
+}
+
     .btn-criar-perfil {
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100%;
+        gap: 10px;
 }
 
     .btn-criar-perfil button {
@@ -213,11 +218,13 @@
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08)
     }
 
+
     .btn-criar-perfil button:hover {
         background-color: #181842c0;
         border: 1px solid #ffffff91;
         box-shadow: 0px 0px 10px rgba(33, 14, 248, 0.062);
 }
+
 
 
 @media (max-width: 999px) and (min-width: 769px) {
@@ -515,3 +522,5 @@
 }
 
 }
+
+

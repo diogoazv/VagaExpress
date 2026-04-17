@@ -49,3 +49,8 @@ mostrar_filtros.addEventListener('click', function() {
     }
 
 });
+
+
+
+
+
