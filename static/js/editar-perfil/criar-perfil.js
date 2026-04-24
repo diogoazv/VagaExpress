@@ -7,7 +7,7 @@ const btnCriarPerfil = document.querySelector('#criar-perfil');
 
 
 //FUNÇAO popup
-function mostrarToast(mensagem) {
+function mostrarpopup(mensagem) {
     const popup = document.getElementById("popup");
     const texto = document.getElementById("popup-msg");
 
@@ -28,7 +28,7 @@ btnCriarPerfil.addEventListener('click', () => {
 
     //VALIDAÇAO
     if (!nomeInput.value || !sobrenomeInput.value || !selecionado) {
-        mostrarToast("Preencha todos os campos!");
+        mostrarpopup("Preencha todos os campos!");
         return;
     }
 
@@ -44,9 +44,16 @@ btnCriarPerfil.addEventListener('click', () => {
     console.log('Perfil salvo:', dadosPerfil);
 
     //POP UP SUCESSO
-    mostrarToast("Perfil salvo com sucesso!");
+    mostrarpopup("Perfil salvo com sucesso!");
+        
 
 });
+
+
+
+
+
+
 
 
 // CARREGAR

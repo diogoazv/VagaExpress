@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="static/css/formulario-vaga/formulario.css">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+
+
+    <link rel='stylesheet'href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
+    <link rel='stylesheet'href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel='stylesheet'href='https://cdn-uicons.flaticon.com/4.0.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+    <link rel='stylesheet'href='https://cdn-uicons.flaticon.com/4.0.0/uicons-bold-straight/css/uicons-bold-straight.css'>
+
+    <title>Formulario Vaga</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Nunito', sans-serif;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        min-height: 100vh;
+    }
+</style>
+
+<body>
+
+    <form class="form-container">
+
+        <div class="cabecalho-formulario">
+            <div class="texto-cabecalho">
+                <h1>Publicar nova vaga</h1>
+                <p>Preencha o formulário abaixo para cadastrar uma nova oportunidade.</p>
+            </div>
+        </div>
+
+        <div class="formulario-vaga">
+
+            <div class="secao-formulario-1 secao-formularios">
+
+                <div class="cabecalho-secao">
+                    <i class="fi fi-tr-member-list"></i>
+                    <span>Informações para Contato</span>
+                </div>
+
+                <div class="barra-progresso">
+                    <div class="progresso-preenchido"></div>
+                </div>
+
+                <div class="campos-formulario">
+
+                    <div class="grupo-campo">
+                        <label for="nome-empregador">
+                            <i class="fi fi-rr-user"></i>
+                            <span>Nome</span>
+                        </label>
+                        <input type="text" id="nome-empregador" placeholder="Primeiro nome" required>
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label for="telefone">
+                            <i class="fi fi-rr-mobile-button"></i>
+                            <span>Telefone</span>
+                        </label>
+                        <input type="tel" id="telefone" placeholder="(11) 99999-9999" required>
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label for="email">
+                            <i class="fi fi-rr-envelope"></i>
+                            <span>Email</span>
+                        </label>
+                        <input type="email" id="email" placeholder="email@empresa.com" required>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+            <div class="secao-formulario-2 secao-formularios">
+
+                <div class="cabecalho-secao">
+                    <i class="fi fi-briefcase"></i>
+                    <span>Informações da Vaga</span>
+                </div>
+
+                <div class="barra-progresso">
+                    <div class="progresso-preenchido"></div>
+                </div>
+
+                <div class="campos-formulario">
+
+                    <div class="grupo-campo">
+                        <label for="nome-empresa">
+                            <i class="fi fi-rr-building"></i>
+                            <span>Nome da Empresa</span>
+                        </label>
+                        <input type="text" id="nome-empresa" placeholder="Nome da empresa" required>
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label for="nome-vaga">
+                            <i class="fi fi-rr-briefcase"></i>
+                            <span>Nome da Vaga</span>
+                        </label>
+                        <input type="text" id="nome-vaga" placeholder="Desenvolvedor Full Stack" required>
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label for="valor-salario">
+                            <i class="fi fi-rs-money-transfer-coin-arrow"></i>
+                            <span>Valor do Salário</span>
+                        </label>
+                        <input type="text" id="valor-salario" placeholder="R$ 5.000,00" required>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+
+            <div class="secao-formulario-3 secao-formularios">
+
+                <div class="campos-formulario">
+
+                    <div class="grupo-campo">
+                        <label for="local-vaga">
+                            <i class="fi fi-rr-marker"></i>
+                            <span>Local da Vaga</span>
+                        </label>
+                        <input type="text" id="local-vaga" placeholder="São Paulo - SP" required>
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label for="tipo-contrato">
+                            <i class="fi fi-rr-document-signed"></i>
+                            <span>Tipo de Contrato</span>
+                        </label>
+                        <select id="tipo-contrato" required>
+                            <option value="">Selecione</option>
+                            <option value="clt">CLT</option>
+                            <option value="pj">PJ</option>
+                            <option value="estagio">Estágio</option>
+                        </select>
+                    </div>
+
+
+
+                    <div class="grupo-campo">
+                        <label for="local-vaga">
+                            <i class="fi fi-rr-layers"></i>
+                            <span>Modelo</span>
+                        </label>
+                        <select id="modelo-trabalho" required>
+                            <option value="">Selecione</option>
+                            <option value="clt">Presencial</option>
+                            <option value="pj">Hibrído</option>
+                            <option value="estagio">Remoto</option>
+                        </select>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+            <div class="secao-formulario-4 secao-formularios">
+
+                <div class="campos-formulario campos-formulario-4">
+
+                    <div class="container-upload">
+                        <div class="area-envio">
+                            <i class="fi fi-ss-cloud-upload"></i>
+
+                            <label for="inputImagem" class="botao-upload">
+                                Clique para Selecionar Imagem
+                            </label>
+
+                            <input type="file" id="inputImagem" class="campo-arquivo" accept="image/*">
+                        </div>
+
+                        <div class="area-arquivo">
+                            <div class="preview-imagem" id="preview"></div>
+                            <div class="nome-arquivo" id="nomeArquivo"></div>
+                        </div>
+                    </div>
+                    <div class="botao-criar-vaga">
+                        <button class="btn" id="btnPublicar">
+                            <span class="texto-btn">Publicar Vaga</span>
+                            <i class="fi fi-bs-arrow-right icone-btn"></i>
+                        </button>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+    </form>
+
+
+
+<script src="/static/js/formulario-vaga/verificacao-imagem.js"></script>
+</body>
+
+</html>
