@@ -47,22 +47,47 @@ form {
         margin-top: 50px;
     }
 
-    .cabecalho-secao {
+    .cabecalho-secao-info-contato {
         display: flex;
-        gap: 10px;
         align-items: center;
         text-align: center;
+        justify-content: space-between;
     }
-
-    .cabecalho-secao span {
+      #icone-verificado{
+        color: rgb(124, 201, 8);
+        display: none;
+    }
+    .info-contato span{
         color: rgba(0, 0, 0, 0.829);
         font-weight: 600;
         font-size: 18px;
     }
-
-    .cabecalho-secao i {
+    .info-contato i{
         color: #0f0f27;
     }
+
+
+    .cabecalho-secao-info-vaga{
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: space-between;
+    }
+    .cabecalho-secao-info-vaga i{
+        color: rgb(124, 201, 8);
+        display: none;
+    }
+    .info-vaga span{
+        color: rgba(0, 0, 0, 0.829);
+        font-weight: 600;
+        font-size: 18px;
+    }
+    .info-vaga i{
+        color: #0f0f27;
+    }
+
+ 
+
 
     .barra-progresso {
         width: 100%;
@@ -72,11 +97,12 @@ form {
     }
 
     .progresso-preenchido {
-        width: 10%;
+        width: 2%;
         background: #292986;
         padding: 1px;
         border-radius: 20px;
         border: none;
+        transition: 3s;
     }
 
     .campos-formulario {
@@ -158,6 +184,8 @@ form {
         border-color: #221f64;
         box-shadow: 0 0 5px 4px rgba(79, 70, 229, 0.15);
     }
+
+    
 
 /*notebook (até 1280px)*/
 @media (max-width: 1280px) {
