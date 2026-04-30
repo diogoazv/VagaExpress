@@ -1,0 +1,465 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="secao-geral">
+
+    <section class="mobile-layout">
+        <div class="info-usuario">
+            <div class="usuario">
+                <div class="saudacao">Olá,</div>
+                <div class="nome-usuario">
+                    {% if usuario %}
+                    {{ usuario.nome }} {{ usuario.sobrenome }}
+
+                    {% else %}
+                    <a href="/criar_perfil">Criar perfil</a>
+
+                    {% endif %}
+                </div>
+            </div>
+
+                <div class="avatar">
+                    {% if usuario and usuario.avatar %}
+                        <img src="{{ usuario.avatar }}" class="fotoPerfil">
+                    {% else %}
+                        <img src="/static/img/avatares/masculino/avatar-masculino-1.jpg" class="fotoPerfil">
+                    {% endif %}
+                </div>
+
+        </div>
+
+
+        <div class="barra-busca">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Buscar vagas, empresas ou tecnologias...">
+
+        </div>
+
+
+
+    </section>
+
+    <section class="pesquisa-mobile">
+        <div class="explore-filtros">
+            <h1>Filtros</h1>
+            <div class="ver_filtros">
+                <div class="exibir">Exibir</div>
+                <i class="fa-solid fa-caret-down"></i>
+            </div>
+        </div>
+        <div class="filtros-mobile">
+
+            <div class="filtro-mobile tipo-modelo">
+                <i class="fa-solid fa-left-right" style="color: #1f945d;"></i>
+                <select>
+                    <option>Modelo</option>
+                    <option>Presencial</option>
+                    <option>Remoto</option>
+                    <option>Híbrido</option>
+                </select>
+            </div>
+
+
+            <div class="filtro-mobile tipo-contrato">
+                <i class="fa-solid fa-briefcase" style="color: rgb(99, 51, 51);"></i>
+                <select>
+                    <option>Tipo</option>
+                    <option>CLT</option>
+                    <option>PJ</option>
+                </select>
+            </div>
+
+
+            <div class="filtro-mobile nivel-experiencia">
+                <i class="fa-solid fa-layer-group" style="color: #4f46e5;"></i>
+                <select>
+                    <option>Experiência</option>
+                    <option>Estagiário</option>
+                    <option>Atendente</option>
+                    <option>Balconista</option>
+                    <option>Caixa</option>
+                    <option>Outros</option>
+
+
+                </select>
+            </div>
+
+            <div class="filtro-mobile localizacao">
+                <i class="fa-solid fa-location-dot" style="color: rgb(148, 10, 10);"></i>
+                <select>
+                    <option>Localização</option>
+                    <option>São Paulo</option>
+                    <option>Rio de Janeiro</option>
+                    <option>Belo Horizonte</option>
+                    <option>Curitiba</option>
+                </select>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <section class="hero-section">
+        <div class="hero-texto-button">
+            <div class="titulo-paragrafo">
+                <h1>Encontre a vaga ideal para você</h1>
+                <p>
+                    Descubra vagas em diversas áreas, empresas e modelos de trabalho, tudo em um só lugar.
+                </p>
+            </div>
+
+            <div class="buttons-container">
+                <button class="button-buscar-vagas" id="buscar_vaga">Buscar Vagas</button>
+                <button class="button-adicionar-vagas">Adicionar Vagas</button>
+            </div>
+
+
+
+            <section class="como-funciona">
+                <div class="textos">
+                    <div class="sobre-vagaExpress">
+                        <h1>VagaExpress</h1>
+                        <p>
+                            O VagaExpress é uma plataforma de emprego inovadora que tem como objetivo facilitar
+                            a
+                            conexão
+                            entre empregadores e candidatos.
+                            Com uma interface amigável e recursos avançados, o VagaExpress oferece uma
+                            experiência única
+                            para quem busca oportunidades.
+                        </p>
+
+                    </div>
+
+                    <div class="como-funciona-vagaExpress">
+                        <h1>Como funciona?</h1>
+                        <p>
+                            O VagaExpress é uma plataforma de emprego que conecta empregadores e candidatos de
+                            forma
+                            rápida e
+                            eficiente.
+                            Os empregadores podem publicar vagas de emprego, enquanto os candidatos podem buscar
+                            e se
+                            candidatar
+                            a essas vagas.
+
+                        </p>
+
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+        <div class="imagem-inicio">
+            <img src="{{ url_for('static', filename='img/ilustracao-inicio.png') }}" alt="">
+        </div>
+    </section>
+
+    <section class="secao-vagas">
+
+        <div class="container-pesquisa">
+
+            <div class="pesquisa">
+                <i class="fa-solid fa-magnifying-glass" style="color: rgb(82, 82, 82);"></i>
+                <input type="text" placeholder="Buscar vagas, empresas ou tecnologias...">
+            </div>
+
+            <div class="filtros">
+
+                <div class="filtro tipo-modelo">
+                    <i class="fa-solid fa-left-right" style="color: #1f945d;"></i>
+                    <select>
+                        <option>Modelo</option>
+                        <option>Presencial</option>
+                        <option>Remoto</option>
+                        <option>Híbrido</option>
+                    </select>
+                </div>
+
+
+                <div class="filtro tipo-contrato">
+                    <i class="fa-solid fa-briefcase" style="color: rgb(99, 51, 51);"></i>
+                    <select>
+                        <option>Tipo</option>
+                        <option>CLT</option>
+                        <option>PJ</option>
+                    </select>
+                </div>
+
+
+                <div class="filtro nivel-experiencia">
+                    <i class="fa-solid fa-layer-group" style="color: #4f46e5;"></i>
+                    <select>
+                        <option>Experiência</option>
+                        <option>Estagiário</option>
+                        <option>Atendente</option>
+                        <option>Balconista</option>
+                        <option>Caixa</option>
+                        <option>Outros</option>
+
+
+                    </select>
+                </div>
+
+                <div class="filtro localizacao">
+                    <i class="fa-solid fa-location-dot" style="color: rgb(148, 10, 10);"></i>
+                    <select>
+                        <option>Localização</option>
+                        <option>São Paulo</option>
+                        <option>Rio de Janeiro</option>
+                        <option>Belo Horizonte</option>
+                        <option>Curitiba</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <button class="botao-pesquisa" type="submit">Pesquisar <i class="fa-solid fa-arrow-right"></i></button>
+
+
+        </div>
+
+
+
+        <section class="card-tela-inicial">
+
+
+
+            <a href="#" class="card-vaga">
+
+
+                <div class="topo">
+                    <img class="logo" src="{{ url_for('static', filename='img/logos-empregador/empregador-1.jpg') }}">
+
+                    <div class="info">
+                        <h2 class="titulo">Aux Administrativo</h2>
+                        <h3 class="empresa">Ativa Serviços Empresariais</h3>
+                    </div>
+
+                    <div class="acoes">
+                        <span class="nova">Recente</span>
+                    </div>
+                </div>
+
+
+                <div class="detalhes">
+                    <span class="badge tipo-contrato">
+                        <i class="fa-solid fa-briefcase"></i> CLT
+                    </span>
+                    <span class="badge modelo-trabalho">
+                        <i class="fa-solid fa-building"></i> Remoto
+                    </span>
+                    <span class="badge nivel-experiencia">
+                        <i class="fa-solid fa-layer-group"></i> Estagiário
+                    </span>
+                </div>
+
+
+                <div class="infos-extra">
+
+                    <div class="info-item local">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>São Paulo</span>
+                    </div>
+
+                    <div class="info-item tempo">
+                        <i class="fa-solid fa-clock"></i>
+                        <span>Há 2 dias</span>
+                    </div>
+
+                </div>
+
+
+                <div class="rodape">
+                    <div class="salario">
+                        <span>R$ 1.420,00</span>
+                    </div>
+
+                    <span class="ver-mais">
+                        Ver vaga <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+                </div>
+
+            </a>
+
+            <a href="#" class="card-vaga">
+
+
+                <div class="topo">
+                    <img class="logo" src="/static/img/logos-empregador/empregador-2.jpg" alt="">
+
+                    <div class="info">
+                        <h2 class="titulo">Vendedor Comercial </h2>
+                        <h3 class="empresa">Mercado Central Brasil</h3>
+                    </div>
+
+                    <div class="acoes">
+                        <span class="nova" style="background: #058fff4b; color: #1d15b6c0;">Ativo</span>
+                    </div>
+                </div>
+
+
+                <div class="detalhes">
+                    <span class="badge tipo-contrato">
+                        <i class="fa-solid fa-briefcase"></i> CLT
+                    </span>
+                    <span class="badge modelo-trabalho">
+                        <i class="fa-solid fa-building"></i> Presencial
+                    </span>
+                    <span class="badge nivel-experiencia">
+                        <i class="fa-solid fa-layer-group"></i> Vendedor
+                    </span>
+                </div>
+
+
+                <div class="infos-extra">
+
+                    <div class="info-item local">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Curitiba</span>
+                    </div>
+
+                    <div class="info-item tempo">
+                        <i class="fa-solid fa-clock"></i>
+                        <span>Há 6 dias</span>
+                    </div>
+
+                </div>
+
+
+                <div class="rodape">
+                    <div class="salario">
+                        <span>R$ 2.300,00</span>
+                    </div>
+
+                    <span class="ver-mais">
+                        Ver vaga <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+                </div>
+
+            </a>
+            <a href="#" class="card-vaga">
+
+
+                <div class="topo">
+                    <img class="logo" src="/static/img/logos-empregador/empregador-3.jpg" alt="">
+
+                    <div class="info">
+                        <h2 class="titulo">Desenvolvedor Java </h2>
+                        <h3 class="empresa">TechNova Soluções</h3>
+                    </div>
+
+                    <div class="acoes">
+                        <span class="nova">Recente</span>
+                    </div>
+                </div>
+
+
+                <div class="detalhes">
+                    <span class="badge tipo-contrato">
+                        <i class="fa-solid fa-briefcase"></i> PJ
+                    </span>
+                    <span class="badge modelo-trabalho">
+                        <i class="fa-solid fa-building"></i> Remoto
+                    </span>
+                    <span class="badge nivel-experiencia">
+                        <i class="fa-solid fa-layer-group"></i> Pleno
+                    </span>
+                </div>
+
+
+                <div class="infos-extra">
+
+                    <div class="info-item local">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Rio de Janeiro</span>
+                    </div>
+
+                    <div class="info-item tempo">
+                        <i class="fa-solid fa-clock"></i>
+                        <span>Há 1 dias</span>
+                    </div>
+
+                </div>
+
+
+                <div class="rodape">
+                    <div class="salario">
+                        <span>R$ 3.600,00</span>
+                    </div>
+
+                    <span class="ver-mais">
+                        Ver vaga <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+                </div>
+
+            </a>
+            <a href="#" class="card-vaga" style="opacity: 0.6; pointer-events: none;">
+
+
+                <div class="topo">
+                    <img class="logo" src="/static/img/logos-empregador/empregador-4.jpg" alt="">
+
+                    <div class="info">
+                        <h2 class="titulo">Atendente de Loja </h2>
+                        <h3 class="empresa">Grupo Horizonte</h3>
+                    </div>
+
+                    <div class="acoes">
+                        <span class="nova" style="background: #ff0a0a63; color: #cc1508;">Encerrado</span>
+                    </div>
+                </div>
+
+
+                <div class="detalhes">
+                    <span class="badge tipo-contrato">
+                        <i class="fa-solid fa-briefcase"></i> CLT
+                    </span>
+                    <span class="badge modelo-trabalho">
+                        <i class="fa-solid fa-building"></i> Presencial
+                    </span>
+                    <span class="badge nivel-experiencia">
+                        <i class="fa-solid fa-layer-group"></i> Atendente
+                    </span>
+                </div>
+
+
+                <div class="infos-extra">
+
+                    <div class="info-item local">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span> São Paulo</span>
+                    </div>
+
+                    <div class="info-item tempo">
+                        <i class="fa-solid fa-clock"></i>
+                        <span>Há 3 semana</span>
+                    </div>
+
+                </div>
+
+
+                <div class="rodape">
+                    <div class="salario">
+                        <span>R$ 1.518,00</span>
+                    </div>
+
+                    <span class="ver-mais">
+                        Ver vaga <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+                </div>
+
+            </a>
+
+        </section>
+
+    </section>
+
+</section>
+{% endblock %}

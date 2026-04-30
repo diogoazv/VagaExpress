@@ -1,1 +1,8 @@
-database
+# Database
+database/database.db
+database/database.db-journal
+
+# Python cache
+__pycache__/
+*.pyc
+

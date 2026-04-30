@@ -120,7 +120,7 @@
                 </div>
 
                 <div class="formulario">
-                    <form action="">
+                    <form method="POST" action="{{ url_for('usuario.criar_perfil') }}">
                         <div class="campo-info">
                             <label for="nome">Nome</label>
                             <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
@@ -138,7 +138,21 @@
                             <input type="radio" id="candidato" name="tipo" value="Candidato" required>
                             <label for="candidato">Candidato</label>
                         </div>
-                    </form>
+                            <div class="btn-criar-perfil">
+                                <button type="submit">Criar Perfil</button>
+                               <!-- 
+                                <a href="#">
+                                    <button id="entrar-perfil">Entrar</button>
+                                </a>
+                                -->
+                            </div> 
+                            <input type="hidden" name="avatar" id="avatar-input">
+                    </form>   
+                </div>
+                
+                
+                        
+            
                     <div class="escolha-avatar">
                         <p>Escolha um avatar</p>
                         <div class="opcoes-avatar">
@@ -188,19 +202,19 @@
                                         alt="Avatar 5">
                                 </div>
                             </div>
-
+                            
                         </div>
                     </div>
 
                 </div>
-
+<!--
                 <div class="btn-criar-perfil">
-                    <button type="submit" id="criar-perfil">Criar Perfil</button>
+                    <button type="submit">Criar Perfil</button>
                     <a href="/base.html">
                         <button type="submit" id="entrar-perfil">Entrar</button>
                     </a>
                 </div>
-                
+-->               
 
             </section>
             

@@ -4,6 +4,7 @@ const radios = document.querySelectorAll('input[name="tipo"]');
 const perfil = document.querySelector('#foto-perfil-img');
 const avatares = document.querySelectorAll('.avatar-img');
 const btnCriarPerfil = document.querySelector('#criar-perfil');
+const avatarInput = document.querySelector('#avatar-input');
 
 
 //FUNÇAO popup
@@ -21,63 +22,32 @@ function mostrarpopup(mensagem) {
 }
 
 
-// SALVAR
-btnCriarPerfil.addEventListener('click', () => {
-
-    const selecionado = document.querySelector('input[name="tipo"]:checked');
-
-    //VALIDAÇAO
-    if (!nomeInput.value || !sobrenomeInput.value || !selecionado) {
-        mostrarpopup("Preencha todos os campos!");
-        return;
-    }
-
-    const dadosPerfil = {
-        nome: nomeInput.value,
-        sobrenome: sobrenomeInput.value,
-        tipo: selecionado.value,
-        avatar: perfil.src
-    };
-
-    localStorage.setItem('dadosPerfil', JSON.stringify(dadosPerfil));
-
-    console.log('Perfil salvo:', dadosPerfil);
-
-    //POP UP SUCESSO
-    mostrarpopup("Perfil salvo com sucesso!");
-        
-
-});
-
-
-
-
-
-
-
-
-// CARREGAR
-const dadosPerfilSalvos = localStorage.getItem('dadosPerfil');
-
-if (dadosPerfilSalvos) {
-    const dadosPerfil = JSON.parse(dadosPerfilSalvos);
-
-    nomeInput.value = dadosPerfil.nome;
-    sobrenomeInput.value = dadosPerfil.sobrenome;
-
-    radios.forEach(radio => {
-        if (radio.value === dadosPerfil.tipo) {
-            radio.checked = true;
-        }
-    });
-
-    perfil.src = dadosPerfil.avatar;
-}
 
 
 // TROCAR AVATAR
 avatares.forEach(avatar => {
     avatar.addEventListener('click', () => {
-        perfil.src = avatar.getAttribute('src');
+        const src = avatar.getAttribute('src');
+        perfil.src = src;
+        avatarInput.value = src; // envia pro backend
     });
 });
+
+// DEFINE AVATAR PADRÃO
+window.addEventListener('DOMContentLoaded', () => {
+    avatarInput.value = perfil.src;
+});
+
+// VALIDAÇÃO
+document.querySelector("form").addEventListener("submit", (e) => {
+    const selecionado = document.querySelector('input[name="tipo"]:checked');
+
+    if (!nomeInput.value || !sobrenomeInput.value || !selecionado) {
+        e.preventDefault();
+        mostrarpopup("Preencha todos os campos!");
+    }
+});
+
+
+
+

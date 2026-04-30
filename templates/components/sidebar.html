@@ -1,0 +1,76 @@
+    <nav id="sidebar">
+        <div id="sidebar_content">
+
+            <div id="user">
+                {% if usuario and usuario.avatar %}
+                    <img src="{{ usuario.avatar }}" class="fotoPerfil" alt="">
+
+                {% else %}
+                <img src="{{ url_for('static', filename='img/avatares/masculino/avatar-masculino-1.jpg') }}" class="fotoPerfil"> 
+
+                {% endif %}
+
+                <p id="user_infos">
+                    <span class="item-description nome-usuario">
+                    {% if usuario %}
+                    {{ usuario.nome }} {{ usuario.sobrenome }}
+
+                    {% else %}
+                    <a href="/criar_perfil">Criar perfil</a>
+                    {% endif %}
+                    </span>
+                    <span class="item-description tipo-usuario">
+                        {% if usuario and usuario.tipo %}
+                        {{ usuario.tipo }}
+
+                        {% else %}
+                        <span>
+                            Nao encontrado
+                        </span>
+                        {% endif %}
+                    </span>
+                </p>
+            </div>
+
+            <ul id="side_items">
+                <li class="side-item active">
+                    <a href="#">
+                        <ion-icon name="home-outline"></ion-icon>
+                        <span class="item-description">Inicio</span>
+                    </a>
+                </li>
+
+                <li class="side-item" id="buscar-vagas">
+                    <a href="#">
+                        <ion-icon name="briefcase-outline"></ion-icon>
+                        <span class="item-description">Buscar vagas</span>
+                    </a>
+                </li>
+
+                <li class="side-item" id="publicar-vaga">
+                    <a href="#">
+                        <ion-icon name="add-outline"></ion-icon>
+                        <span class="item-description">Publicar Vagas</span>
+                    </a>
+                </li>
+
+                <li class="side-item" id="configuracoes">
+                    <a href="#">
+                        <ion-icon name="settings-outline"></ion-icon>
+                        <span class="item-description">Configurações</span>
+                    </a>
+                </li>
+            </ul>
+
+            <button id="open_btn">
+                <i id="open_btn_icon" class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <div id="logout">
+            <button id="logout_btn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span class="item-description">Sair</span>
+            </button>
+        </div>
+    </nav>
